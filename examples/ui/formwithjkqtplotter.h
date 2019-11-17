@@ -19,6 +19,7 @@ class FormWithJKQTPlotter : public QWidget
         void on_chkLogX_toggled(bool checked);
         void on_chkLogY_toggled(bool checked);
         void on_btnReplot_clicked();
+        void on_horizontalSlider_valueChanged(int value);
 
     private:
         Ui::FormWithJKQTPlotter *ui;

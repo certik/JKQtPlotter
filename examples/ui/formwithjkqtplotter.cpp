@@ -50,3 +50,14 @@ void FormWithJKQTPlotter::on_btnReplot_clicked()
     graph->setTitle(ui->edtEquation->text());
     ui->plot->redrawPlot();
 }
+
+void FormWithJKQTPlotter::on_horizontalSlider_valueChanged(int value)
+{
+    //std::string s = "sin(x*4*pi)*exp(-x/5)";
+    std::string val = std::to_string(value);
+    std::string s = "sin(x*4*pi)*exp(-x/(" + val + "+1))";
+    QString s2 = s.c_str();
+    graph->setFunction(s2);
+    graph->setTitle(s2);
+    ui->plot->redrawPlot();
+}
